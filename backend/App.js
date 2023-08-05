@@ -20,12 +20,12 @@ app.post("/api/send-email", (req, res) => {
     service: "Gmail", // Use your email service provider here or provide SMTP settings
     auth: {
       user: process.env.EMAIL, // Replace with your email address
-      pass: process.env.EMAIL_PASSWORD, // Replace with your email password or app-specific password
+      pass: process.env.PASSWORD, // Replace with your email password or app-specific password
     },
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_PASSWORD,
+    from: process.env.EMAIL,
     to: YOUR_EMAIL,
     subject,
     text: message,
